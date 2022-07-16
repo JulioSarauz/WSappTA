@@ -1,0 +1,44 @@
+<app-cabecera></app-cabecera>
+
+
+<div class="row" style="text-align: center; margin-top: 5%; margin-bottom: 5%;">
+    <h1>USUARIOS</h1>
+</div>
+
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Fecha Nacimiento</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let user of listaUsuarios">
+              <tr>
+                <th scope="row">{{user.codigo}}</th>
+                <td>{{user.nombre}}</td>
+                <td>{{user.apellido}}</td>
+                <td>{{user.nacimiento}}</td>
+                <td>{{user.sexo}}</td>
+                <td>{{user.correo}}</td>
+                <td>{{user.contrasena}}</td>
+                <td>
+                    <a class="btn btn-outline-warning" (click)="editar(user)">Editar</a>
+                    <a class="btn btn-outline-danger" (click)="eliminar()">Eliminar</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+    </div>
+    <div class="col-2"></div>
+</div>

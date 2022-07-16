@@ -1,0 +1,27 @@
+
+<div class="container">
+    <div class="row" style="margin-top: 10%;">
+      <div class="col-8">
+        <app-carousel></app-carousel>
+      </div>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <h1 style="background-color: rgb(248, 161, 0);"><span style="width: 100%;" class="badge bg-secondary">Inicio Sesion</span></h1>
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="ejemplo@example.com" [(ngModel)]="user">
+                <label for="floatingInput">Usuario</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="clave">
+                <label for="floatingPassword">Contraseña</label>
+              </div>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-outline-warning" (click)="iniciarSesion()">Iniciar</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
