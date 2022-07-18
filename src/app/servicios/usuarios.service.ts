@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { UsuarioInterfaces } from '../interfaces/INTERFACES';
 
@@ -8,7 +8,8 @@ import { UsuarioInterfaces } from '../interfaces/INTERFACES';
 })
 export class UsuariosService {
 
-  path =  `${environment.host}:${environment.port}`;
+  //ath =  `${environment.host}:${environment.port}`;
+  path =  `${environment.host}`;
   constructor(
     private readonly _http:HttpClient
   ) { }
@@ -20,7 +21,7 @@ export class UsuariosService {
 
   actualizarUsuario(user:UsuarioInterfaces){
     const segmento = "/api/post.php";
-    return this._http.put(`${this.path}${segmento}`,user);
+    return this._http.put(`${this.path}${segmento}?codigo=${user.codigo}&nombre=${user.nombre}&apellido=${user.apellido}&nacimiento=${user.nacimiento}&sexo=${user.sexo}&correo=${user.correo}&contrasena=${user.contrasena}`,{},{headers: new HttpHeaders().set('Access-Control-Allow-Origin', '*')});
   }
 
 
