@@ -10,17 +10,7 @@ import { UsuariosService } from '../servicios/usuarios.service';
 })
 export class UsuariosComponent implements OnInit {
 
-  listaUsuarios:UsuarioInterfaces[] =[
-    {
-      codigo:"1",
-      nombre:"",
-      apellido:"",
-      nacimiento:"",
-      sexo:"",
-      correo:"",
-      contrasena:"",
-    }
-  ];
+  listaUsuarios:UsuarioInterfaces[] | undefined;
   
   constructor(
     private readonly _srvUsuarios:UsuariosService,

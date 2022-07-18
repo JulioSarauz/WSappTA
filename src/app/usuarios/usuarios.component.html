@@ -9,35 +9,41 @@
     <div class="col-2"></div>
     <div class="col-8">
 
+      <div *ngIf="listaUsuarios !== undefined">
         <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Codigo</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Fecha Nacimiento</th>
-                <th scope="col">Sexo</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Contraseña</th>
-                <th scope="col">Opciones</th>
-              </tr>
-            </thead>
-            <tbody *ngFor="let user of listaUsuarios">
-              <tr>
-                <th scope="row">{{user.codigo}}</th>
-                <td>{{user.nombre}}</td>
-                <td>{{user.apellido}}</td>
-                <td>{{user.nacimiento}}</td>
-                <td>{{user.sexo}}</td>
-                <td>{{user.correo}}</td>
-                <td>{{user.contrasena}}</td>
-                <td>
-                    <a class="btn btn-outline-warning" (click)="editar(user)">Editar</a>
-                    <a class="btn btn-outline-danger" (click)="eliminar()">Eliminar</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <thead>
+            <tr>
+              <th scope="col">Codigo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Fecha Nacimiento</th>
+              <th scope="col">Sexo</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Contraseña</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let user of listaUsuarios">
+            <tr>
+              <th scope="row">{{user.codigo}}</th>
+              <td>{{user.nombre}}</td>
+              <td>{{user.apellido}}</td>
+              <td>{{user.nacimiento}}</td>
+              <td>{{user.sexo}}</td>
+              <td>{{user.correo}}</td>
+              <td>{{user.contrasena}}</td>
+              <td>
+                  <a class="btn btn-outline-warning" (click)="editar(user)">Editar</a>
+                  <a class="btn btn-outline-danger" (click)="eliminar()">Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       <div *ngIf="listaUsuarios === undefined" style=" text-align: center;">
+              <h1>No existen usuarios registrados</h1>
+       </div>
 
     </div>
     <div class="col-2"></div>
