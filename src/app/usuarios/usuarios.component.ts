@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActualizarComponent } from '../componentes/actualizar/actualizar.component';
+import { CrearComponent } from '../componentes/crear/crear.component';
 import { UsuarioInterfaces } from '../interfaces/INTERFACES';
 import { UsuariosService } from '../servicios/usuarios.service';
 
@@ -14,7 +15,8 @@ export class UsuariosComponent implements OnInit {
   
   constructor(
     private readonly _srvUsuarios:UsuariosService,
-    private readonly _modalActualizar:ActualizarComponent
+    private readonly _modalActualizar:ActualizarComponent,
+    private readonly _modalCrear:CrearComponent
   ) { }
 
   ngOnInit(): void {
@@ -28,13 +30,12 @@ export class UsuariosComponent implements OnInit {
   }
 
   crear(){
-    
+    this._modalCrear.open();
   }
 
   eliminar(codigo:string){
     this._srvUsuarios.eliminarUsuario(codigo).subscribe(res=>{
-      console.log(res);
-      
+      window.location.reload();
     })
   }
 

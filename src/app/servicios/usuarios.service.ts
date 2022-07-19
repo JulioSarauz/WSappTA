@@ -30,7 +30,7 @@ export class UsuariosService {
 
   eliminarUsuario(codigo:string){
     const segmento = "/api/app.php";
-    return this._http.delete(`${this.path}${segmento}?metodo=${codigo}`,{});
+    return this._http.delete(`${this.path}${segmento}?codigo=${codigo}`,{});
   }
 
 }

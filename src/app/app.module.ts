@@ -38,6 +38,7 @@ import { CrearComponent } from './componentes/crear/crear.component';
   ],
   providers: [
     ActualizarComponent,
+    CrearComponent,
     ...SERVICIOSPHP
   ],
   bootstrap: [AppComponent]

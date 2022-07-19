@@ -44,10 +44,10 @@ ngOnInit(): void {
     }
     this._srvUsuario.crearUsuario(user).subscribe(res=>{
       console.log(res);
-      
+    window.location.reload;
+    this.modalService.dismissAll();
     })
     
-    //this.modalService.dismissAll();
   }
 
 }
