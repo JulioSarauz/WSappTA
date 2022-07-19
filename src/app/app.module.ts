@@ -14,6 +14,7 @@ import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SERVICIOSPHP } from './constantes/SERVICIOS';
 import { ActualizarComponent } from './componentes/actualizar/actualizar.component';
+import { CrearComponent } from './componentes/crear/crear.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ActualizarComponent } from './componentes/actualizar/actualizar.compone
     CarouselComponent,
     CabeceraComponent,
     ActualizarComponent,
+    CrearComponent,
   ],
   imports: [
     BrowserModule,

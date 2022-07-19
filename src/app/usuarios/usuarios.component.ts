@@ -18,18 +18,24 @@ export class UsuariosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this._srvUsuarios.consultarUsuarios().subscribe(res=>{
+   this._srvUsuarios.consultarUsuarios().subscribe(res=>{
       this.listaUsuarios = JSON.parse(JSON.stringify(res));
     });
   }
 
   editar(user:any){
-    console.log("editar");
       this._modalActualizar.open(user.codigo, user.nombre, user.apellido, user.nacimiento, user.sexo, user.correo, user.contrasena);
   }
 
-  eliminar(){
+  crear(){
     
+  }
+
+  eliminar(codigo:string){
+    this._srvUsuarios.eliminarUsuario(codigo).subscribe(res=>{
+      console.log(res);
+      
+    })
   }
 
 }

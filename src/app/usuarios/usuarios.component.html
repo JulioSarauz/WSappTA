@@ -10,6 +10,8 @@
     <div class="col-8">
 
       <div *ngIf="listaUsuarios !== undefined">
+
+        <a class="btn btn-outline-info" (click)="crear()">CREAR +</a>
         <table class="table">
           <thead>
             <tr>
@@ -34,7 +36,7 @@
               <td>{{user.contrasena}}</td>
               <td>
                   <a class="btn btn-outline-warning" (click)="editar(user)">Editar</a>
-                  <a class="btn btn-outline-danger" (click)="eliminar()">Eliminar</a>
+                  <a class="btn btn-outline-danger" (click)="eliminar(user.codigo)">Eliminar</a>
               </td>
             </tr>
           </tbody>

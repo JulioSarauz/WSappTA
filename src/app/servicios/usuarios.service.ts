@@ -15,14 +15,22 @@ export class UsuariosService {
   ) { }
 
   consultarUsuarios(){
-    const segmento = "/api/post.php";
+    const segmento = "/api/app.php";
     return this._http.get(`${this.path}${segmento}`);
+  }
+  crearUsuario(user:UsuarioInterfaces){
+      const segmento = "/api/app.php";
+      return this._http.post(`${this.path}${segmento}?nombre=${user.nombre}&apellido=${user.apellido}&nacimiento=${user.nacimiento}&sexo=${user.sexo}&correo=${user.correo}&contrasena=${user.contrasena}`,{},{headers: new HttpHeaders().set('Access-Control-Allow-Origin', '*')});
   }
 
   actualizarUsuario(user:UsuarioInterfaces){
-    const segmento = "/api/post.php";
+    const segmento = "/api/app.php";
     return this._http.put(`${this.path}${segmento}?codigo=${user.codigo}&nombre=${user.nombre}&apellido=${user.apellido}&nacimiento=${user.nacimiento}&sexo=${user.sexo}&correo=${user.correo}&contrasena=${user.contrasena}`,{},{headers: new HttpHeaders().set('Access-Control-Allow-Origin', '*')});
   }
 
+  eliminarUsuario(codigo:string){
+    const segmento = "/api/app.php";
+    return this._http.delete(`${this.path}${segmento}?metodo=${codigo}`,{});
+  }
 
 }

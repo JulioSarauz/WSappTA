@@ -58,9 +58,9 @@ export class ActualizarComponent implements OnInit {
     }
     this._srvUsuario.actualizarUsuario(user).subscribe(res=>{
       console.log(res);
-      
+        window.location.reload();
+        this.modalService.dismissAll();
     })
-    
-    //this.modalService.dismissAll();
+
   }
 }

@@ -1,0 +1,46 @@
+
+<div class="container">
+    <div class="row" style="margin-top: 10%; margin-bottom: 10%;">
+      <div class="col-2">
+      </div>
+      <div class="col-10">
+        <div class="card" style="width: 18rem;">
+            <h1 style="background-color: rgb(248, 161, 0);"><span style="width: 100%;" class="badge bg-secondary">Actualizar Usuario</span></h1>
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="ejemplo@example.com" textContent="{{codigo}}" [(ngModel)]="codigo" readonly>
+                <label for="floatingInput">Codigo</label>
+              </div>
+              <div class="form-floating mb-3 mb-3">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Password" textContent="{{nombre}}" [(ngModel)]="nombre">
+                <label for="floatingPassword">Nombre</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Password" textContent="{{apellido}}" [(ngModel)]="apellido">
+                <label for="floatingPassword">Apellido</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Password" textContent="{{fechaNacimiento}" [(ngModel)]="fechaNacimiento">
+                <label for="floatingPassword">Fecha Nacimiento</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Password" textContent="{{sexo}}" [(ngModel)]="sexo">
+                <label for="floatingPassword">Sexo</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Password" textContent="{{correo}}" [(ngModel)]="correo">
+                <label for="floatingPassword">Correo</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Password" textContent="{{clave}}" [(ngModel)]="clave">
+                <label for="floatingPassword">Contraseña</label>
+              </div>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-outline-warning" (click)="cerrar()">Actualizar</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
