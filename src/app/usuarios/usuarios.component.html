@@ -9,7 +9,7 @@
     <div class="col-2"></div>
     <div class="col-8">
 
-      <div *ngIf="listaUsuarios !== undefined">
+      <div *ngIf="listaUsuarios !== undefined && listaUsuarios">
 
         <a class="btn btn-outline-info" (click)="crear()">CREAR +</a>
         <table class="table">
@@ -43,8 +43,9 @@
         </table>
       </div>
 
-       <div *ngIf="listaUsuarios === undefined" style=" text-align: center;">
+       <div *ngIf="listaUsuarios === undefined || !listaUsuarios" style=" text-align: center;">
               <h1>No existen usuarios registrados</h1>
+              <a class="btn btn-outline-info" (click)="crear()">CREAR +</a>
        </div>
 
     </div>

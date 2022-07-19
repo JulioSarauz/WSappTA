@@ -43,9 +43,8 @@ ngOnInit(): void {
       contrasena:this.clave,
     }
     this._srvUsuario.crearUsuario(user).subscribe(res=>{
-      console.log(res);
-    window.location.reload;
-    this.modalService.dismissAll();
+        window.location.reload();
+        this.modalService.dismissAll();
     })
     
   }

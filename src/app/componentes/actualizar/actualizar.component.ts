@@ -57,7 +57,6 @@ export class ActualizarComponent implements OnInit {
       contrasena:this.clave,
     }
     this._srvUsuario.actualizarUsuario(user).subscribe(res=>{
-      console.log(res);
         window.location.reload();
         this.modalService.dismissAll();
     })

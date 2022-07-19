@@ -22,6 +22,8 @@ export class UsuariosComponent implements OnInit {
   ngOnInit(): void {
    this._srvUsuarios.consultarUsuarios().subscribe(res=>{
       this.listaUsuarios = JSON.parse(JSON.stringify(res));
+      console.log(this.listaUsuarios);
+      
     });
   }
 
